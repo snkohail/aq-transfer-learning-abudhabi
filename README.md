@@ -1,6 +1,6 @@
 # Transfer Learning for PM2.5 at Newly Deployed Air-Quality Stations
 
-[![tests](https://github.com/snkohail/pm25-transfer-learning/actions/workflows/ci.yml/badge.svg)](https://github.com/snkohail/pm25-transfer-learning/actions/workflows/ci.yml)
+[![tests](https://github.com/snkohail/aq-transfer-learning-abudhabi/actions/workflows/ci.yml/badge.svg)](https://github.com/snkohail/aq-transfer-learning-abudhabi/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
