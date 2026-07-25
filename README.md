@@ -156,9 +156,7 @@ plausible partial explanation for the extreme-day failure.
 
 ## Citing
 
-If this is useful, please cite it — see [`CITATION.cff`](CITATION.cff) (GitHub
-turns it into a "Cite this repository" button). The accompanying manuscript is in
-preparation; author and venue details will be added here once it's public.
+If this is useful, please cite this repo. 
 
 ## Contributing
 
