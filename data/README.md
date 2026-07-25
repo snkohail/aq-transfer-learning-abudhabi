@@ -1,9 +1,6 @@
 # Data
 
-The raw station workbook is **not** included in this repository. It holds
-government air-quality monitoring records for the Emirate of Abu Dhabi, and
-redistribution has to be cleared separately — so we keep it out of the public
-tree rather than assume permission.
+The raw station workbook will be published soon once the paper is accepted for publication.
 
 You do **not** need it to read the findings. Every result table the paper cites
 is committed under [`../outputs/`](../outputs/), so you can inspect the numbers,
