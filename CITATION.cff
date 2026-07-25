@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or build on these findings, please cite it."
+title: "Leak-free transfer learning for next-day PM2.5 forecasting at newly deployed stations"
+abstract: >-
+  A deployment-realistic, tail-aware evaluation of multi-source transfer learning
+  for next-day PM2.5 forecasting at newly deployed air-quality stations in Abu
+  Dhabi. Pooled linear transfer beats persistence on ordinary days at every target
+  station but is worse on the extreme-pollution days that matter, and added model
+  capacity (LSTM, gradient boosting) does not help.
+type: software
+
+authors:
+  - family-names: Kohail
+    given-names: Sarah
+    email: Sarah.Kohail@zu.ac.ae
+version: "1.0.0"
+date-released: "2026-07-25"
+license: MIT
+repository-code: "https://github.com/snkohail/aq-transfer-learning-abudhabi/"
+keywords:
+  - air quality
+  - PM2.5
+  - transfer learning
+  - time series forecasting
+  - extreme events
