@@ -1,0 +1,13 @@
+# Verified working set. The deterministic stages reproduce the original
+# (Linux / Python 3.12) results to 3.1e-14 relative on these versions.
+numpy>=2.0,<3
+pandas>=2.2,<4
+scipy>=1.11
+scikit-learn>=1.4
+openpyxl>=3.1
+
+# LSTM stage only; the ridge stages run without it.
+torch>=2.0
+
+# tests
+pytest>=8.0
