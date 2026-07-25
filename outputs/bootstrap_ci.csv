@@ -1,0 +1,7 @@
+K,slice,method,statistic,D_definition,n_stations,point_estimate,ci95_lo,ci95_hi,ci90_lo,ci90_hi,excludes_zero_95,one_sided_support,effect_side,n_resamples,n_valid_resamples,notes
+90,all,date_block_14d,median_station_D,RMSE_transfer_minus_RMSE_persistence,12,-0.8412,-1.4284,-0.3327,-1.3208,-0.4224,True,0.9975,better,2000,2000,
+90,normal,date_block_14d,median_station_D,RMSE_transfer_minus_RMSE_persistence,12,-1.4304,-2.3006,-0.7926,-2.0993,-0.8771,True,1.0,better,2000,2000,
+90,ext,date_block_14d,median_station_D,RMSE_transfer_minus_RMSE_persistence,8,5.7698,-0.3795,12.3221,0.6121,11.6131,False,0.9655,worse,2000,1998,absolute >=75 ug/m3; sparse extreme days -> lumpy interval
+90,ext,episode_block,median_station_D,RMSE_transfer_minus_RMSE_persistence,8,5.7698,-0.3057,12.1861,0.6241,11.4236,False,0.969,worse,2000,1999,21 extreme episodes; episodes resampled as the unit
+90,ext,date_block_14d_mean,mean_station_D,RMSE_transfer_minus_RMSE_persistence,8,5.1457,0.3882,11.1321,1.019,10.4281,True,0.982,worse,2000,1998,mean-across-stations robustness
+90,ext,episode_block_mean,mean_station_D,RMSE_transfer_minus_RMSE_persistence,8,5.1457,0.1855,10.7117,0.8856,9.8041,True,0.982,worse,2000,1999,mean-across-stations robustness

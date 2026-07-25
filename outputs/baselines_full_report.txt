@@ -1,0 +1,28 @@
+====================================================================================
+VALIDATION -- re-run stage_baselines reproduces committed baselines.csv
+====================================================================================
+  23 (target,K) rows x 5 cols, worst rel 1.9e-16 <= 1e-12  ->  OK
+
+====================================================================================
+BASELINES -- median RMSE and paired win-rate vs persistence
+====================================================================================
+
+--- K=30  (n=11 targets; station_20 dropped: 0 adaptation sequences) ---
+  persistence      median RMSE   12.513   (reference)
+  pooled_transfer  median RMSE   11.816   (reference)
+  baseline              medRMSE  wins/n vs pers  winrate        p    dPair
+  local_mean             20.189            0/11     0.00   0.0010   -6.572   [adaptation-window mean]
+  local_ridge_unreg     130.644            0/11     0.00   0.0010 -118.511   [full 18-feature local ridge (alpha=1.0)]
+
+--- K=90  (n=12 targets) ---
+  persistence      median RMSE   12.330   (reference)
+  pooled_transfer  median RMSE   11.587   (reference)
+  baseline              medRMSE  wins/n vs pers  winrate        p    dPair
+  local_mean             18.867            0/12     0.00   0.0005   -4.731   [adaptation-window mean]
+  local_ridge_unreg      36.787            0/12     0.00   0.0005  -21.687   [full 18-feature local ridge (alpha=1.0)]
+
+Interpretation:
+  - local_mean: a flat within-window mean; far above persistence at both K,
+    it never beats the naive baseline (win-rate 0).
+  - local_ridge_unreg: 18 features on ~16 adaptation sequences -> collapses
+    (median RMSE in the hundreds at K=30); the instability is now a number.

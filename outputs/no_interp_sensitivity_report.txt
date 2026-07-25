@@ -1,0 +1,72 @@
+==================================================================================
+VALIDATION -- interpolated arm reproduces the committed tables
+==================================================================================
+  K=30 vs extreme.csv : 12 targets x 10 cols OK (worst rel 1.9e-16 <= 1e-12)
+  K=90 vs baselines.csv: 12 targets x 2 cols OK (worst rel 1.6e-16 <= 1e-12)
+
+==================================================================================
+DATA LOSS -- interpolated (committed) vs no-interpolation
+==================================================================================
+  corpus non-null station-days : interp  25885   no-interp  25577   lost  308 (1.20% of the raw non-null base)
+  eligible targets             : interp     12   no-interp     12
+  targets dropped under no-interp: none
+  target valid windows (full)  : interp   4294   no-interp   4260   lost 34
+  retained test windows K=30   : interp   4118 (12 tgts)   no-interp   4084 (12 tgts)   lost 34
+  retained test windows K=90   : interp   3420 (12 tgts)   no-interp   3401 (12 tgts)   lost 19
+
+==================================================================================
+OVERALL -- pooled transfer vs persistence (all-days slice)
+==================================================================================
+--- K=30 ---
+  interp    : n=12 pers= 12.405 transfer= 11.685 gain=  +5.8% dPair= +0.694 wins=12/12 p=0.0005
+  no-interp : n=12 pers= 12.405 transfer= 11.750 gain=  +5.3% dPair= +0.621 wins=12/12 p=0.0005
+  intersection (n=12): transfer median 11.685->11.750  persistence median 12.405->12.405
+--- K=90 ---
+  interp    : n=12 pers= 12.330 transfer= 11.587 gain=  +6.0% dPair= +0.841 wins=12/12 p=0.0005
+  no-interp : n=12 pers= 12.347 transfer= 11.649 gain=  +5.7% dPair= +0.739 wins=12/12 p=0.0005
+  intersection (n=12): transfer median 11.587->11.649  persistence median 12.330->12.347
+
+==================================================================================
+EXTREME DECOMPOSITION -- persistence vs transfer, by slice
+(K=30 interp reproduces extreme.csv; K=90 interp is newly computed on
+ the same code path -- no committed extreme table exists at K=90)
+==================================================================================
+--- K=30 ---
+  all     interp    : n=12 pers= 12.405 transfer= 11.685 gain=  +5.8% dPair= +0.694 wins=12/12 p=0.0005
+  all     no-interp : n=12 pers= 12.405 transfer= 11.750 gain=  +5.3% dPair= +0.621 wins=12/12 p=0.0005
+  normal  interp    : n=12 pers= 11.821 transfer= 10.589 gain= +10.4% dPair= +1.339 wins=12/12 p=0.0005
+  normal  no-interp : n=12 pers= 11.821 transfer= 10.580 gain= +10.5% dPair= +1.289 wins=12/12 p=0.0005
+  ext     interp    : n=9  pers= 26.854 transfer= 32.374 gain= -20.6% dPair= -5.847 wins=0/9 p=0.0039
+  ext     no-interp : n=9  pers= 26.854 transfer= 32.657 gain= -21.6% dPair= -6.130 wins=0/9 p=0.0039
+  extrel  interp    : n=12 pers= 19.139 transfer= 22.128 gain= -15.6% dPair= -2.050 wins=1/12 p=0.0010
+  extrel  no-interp : n=12 pers= 19.307 transfer= 22.336 gain= -15.7% dPair= -2.287 wins=1/12 p=0.0010
+  onset   interp    : n=7  pers= 33.740 transfer= 36.376 gain=  -7.8% dPair= -5.409 wins=0/7 p=0.0156
+  onset   no-interp : n=7  pers= 33.740 transfer= 36.743 gain=  -8.9% dPair= -5.674 wins=0/7 p=0.0156
+
+--- K=90 ---
+  all     interp    : n=12 pers= 12.330 transfer= 11.587 gain=  +6.0% dPair= +0.841 wins=12/12 p=0.0005
+  all     no-interp : n=12 pers= 12.347 transfer= 11.649 gain=  +5.7% dPair= +0.739 wins=12/12 p=0.0005
+  normal  interp    : n=12 pers= 11.863 transfer= 10.423 gain= +12.1% dPair= +1.430 wins=12/12 p=0.0005
+  normal  no-interp : n=12 pers= 11.863 transfer= 10.475 gain= +11.7% dPair= +1.382 wins=12/12 p=0.0005
+  ext     interp    : n=8  pers= 28.920 transfer= 34.690 gain= -20.0% dPair= -5.770 wins=0/8 p=0.0078
+  ext     no-interp : n=8  pers= 28.920 transfer= 35.072 gain= -21.3% dPair= -6.152 wins=0/8 p=0.0078
+  extrel  interp    : n=11 pers= 19.833 transfer= 21.301 gain=  -7.4% dPair= -1.838 wins=1/11 p=0.0020
+  extrel  no-interp : n=11 pers= 20.360 transfer= 21.563 gain=  -5.9% dPair= -2.084 wins=1/11 p=0.0020
+  onset   interp    : n=6  pers= 38.166 transfer= 40.559 gain=  -6.3% dPair= -3.496 wins=0/6 p=0.0312
+  onset   no-interp : n=6  pers= 38.166 transfer= 40.654 gain=  -6.5% dPair= -3.658 wins=0/6 p=0.0312
+
+==================================================================================
+PER-STATION WIN COUNTS under no-interpolation (transfer < persistence)
+==================================================================================
+  overall K=30: transfer wins 12/12  (p=0.0005)
+  overall K=90: transfer wins 12/12  (p=0.0005)
+  tail    K=30: abs-ext transfer wins 0/9 (p=0.0039) | extrel transfer wins 1/12 (p=0.0010)
+  tail    K=90: abs-ext transfer wins 0/8 (p=0.0078) | extrel transfer wins 1/11 (p=0.0020)
+
+==================================================================================
+VERDICT
+==================================================================================
+K=30: transfer beats persistence overall 12/12 (p=0.0005) -> HOLDS
+K=90: transfer beats persistence overall 12/12 (p=0.0005) -> HOLDS
+K=30: transfer loses on the tail (abs -21.6%, extrel -15.7%) -> HOLDS
+K=90: transfer loses on the tail (abs -21.3%, extrel -5.9%) -> HOLDS

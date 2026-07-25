@@ -1,0 +1,32 @@
+====================================================================================
+CALENDAR-BLOCK BOOTSTRAP  K=90  |  stations T=12  union calendar N=572 days (2023-04-16 -> 2024-11-07)
+blocks=14d  resamples=2000  seed=42  D = RMSE_transfer - RMSE_persistence (negative => transfer better)
+====================================================================================
+
+all      [date_block_14d]  point D=-0.841  95% CI [-1.428, -0.333]  excludes 0: TRUE  (better (transfer<persistence))
+           90% CI [-1.321, -0.422]  one-sided support (resamples on the better side): 99.8%   stations=12, valid=2000/2000
+
+normal   [date_block_14d]  point D=-1.430  95% CI [-2.301, -0.793]  excludes 0: TRUE  (better (transfer<persistence))
+           90% CI [-2.099, -0.877]  one-sided support (resamples on the better side): 100.0%   stations=12, valid=2000/2000
+
+ext      [date_block_14d]  point D=+5.770  95% CI [-0.379, +12.322]  excludes 0: FALSE  (worse (transfer>persistence))
+           90% CI [+0.612, +11.613]  one-sided support (resamples on the worse side): 96.5%   stations=8, valid=1998/2000
+
+ext      [episode_block]  point D=+5.770  95% CI [-0.306, +12.186]  excludes 0: FALSE  (worse (transfer>persistence))
+           90% CI [+0.624, +11.424]  one-sided support (resamples on the worse side): 96.9%   stations=8, valid=1999/2000
+
+ext      [date_block_14d_mean]  point D=+5.146  95% CI [+0.388, +11.132]  excludes 0: TRUE  (worse (transfer>persistence))
+           90% CI [+1.019, +10.428]  one-sided support (resamples on the worse side): 98.2%   stations=8, valid=1998/2000
+
+ext      [episode_block_mean]  point D=+5.146  95% CI [+0.186, +10.712]  excludes 0: TRUE  (worse (transfer>persistence))
+           90% CI [+0.886, +9.804]  one-sided support (resamples on the worse side): 98.2%   stations=8, valid=1999/2000
+
+====================================================================================
+VERDICT (does each interval exclude zero, on the expected side?)
+====================================================================================
+  all     [date_block_14d] 95% CI [-1.428,-0.333]  support=99.8% -> EXCLUDES 0 on better side (<0)
+  normal  [date_block_14d] 95% CI [-2.301,-0.793]  support=100.0% -> EXCLUDES 0 on better side (<0)
+  ext     [date_block_14d] 95% CI [-0.380,+12.322]  support=96.5% -> does NOT exclude 0 (expected worse side (>0))
+  ext     [episode_block ] 95% CI [-0.306,+12.186]  support=96.9% -> does NOT exclude 0 (expected worse side (>0))
+  ext     [date_block_14d_mean] 95% CI [+0.388,+11.132]  support=98.2% -> EXCLUDES 0 on worse side (>0)
+  ext     [episode_block_mean] 95% CI [+0.185,+10.712]  support=98.2% -> EXCLUDES 0 on worse side (>0)

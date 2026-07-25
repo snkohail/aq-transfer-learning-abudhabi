@@ -1,0 +1,23 @@
+====================================================================================
+VERIFY committed rmse_*/n_* unchanged after adding mae_* columns
+====================================================================================
+  baselines: 8 rmse/n cols x 23 rows unchanged (worst rel 1.9e-16 <= 1e-12)  OK
+  extreme: 16 rmse/n cols x 12 rows unchanged (worst rel 1.9e-16 <= 1e-12)  OK
+  detection: identical to committed = True (left as is)
+  new baselines mae cols: 7 | new extreme mae cols: 10
+  copied regenerated baselines.csv + extreme.csv -> outputs/ (detection.csv untouched)
+
+====================================================================================
+MAE MEDIANS -- headline comparisons (paired, transfer/model vs persistence)
+====================================================================================
+
+BASELINES (overall, MAE):
+  K=30: transfer MAE 8.987  persistence MAE 9.419  gain +4.6%  transfer wins 8/11  p=0.0420
+  K=90: transfer MAE 9.004  persistence MAE 9.161  gain +1.7%  transfer wins 10/12  p=0.0269
+
+EXTREME decomposition (K=30, MAE, model vs persistence):
+  all    : model MAE 8.964  persistence MAE 9.286  gain +3.5%  model wins 8/12  p=0.0640
+  normal : model MAE 8.446  persistence MAE 8.979  gain +5.9%  model wins 11/12  p=0.0010
+  ext    : model MAE 30.154  persistence MAE 21.402  gain -40.9%  model wins 0/9  p=0.0039
+  extrel : model MAE 18.957  persistence MAE 14.858  gain -27.6%  model wins 0/12  p=0.0005
+  onset  : model MAE 33.998  persistence MAE 29.586  gain -14.9%  model wins 0/7  p=0.0156

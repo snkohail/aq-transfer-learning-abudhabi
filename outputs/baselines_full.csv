@@ -1,0 +1,5 @@
+K,baseline,description,n_targets,median_rmse,persistence_median,pooled_transfer_median,wins_vs_persistence,winrate_vs_persistence,p_value_wilcoxon,pct_worse_than_persistence
+30,local_mean,adaptation-window mean,11,20.1886,12.5134,11.8158,0,0.0,0.000977,61.3
+30,local_ridge_unreg,full 18-feature local ridge (alpha=1.0),11,130.644,12.5134,11.8158,0,0.0,0.000977,944.0
+90,local_mean,adaptation-window mean,12,18.8672,12.3303,11.5872,0,0.0,0.000488,53.0
+90,local_ridge_unreg,full 18-feature local ridge (alpha=1.0),12,36.7871,12.3303,11.5872,0,0.0,0.000488,198.3

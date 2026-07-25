@@ -1,0 +1,28 @@
+station_id,name,lat,lon,first_obs,last_obs,n_valid_obs,active_span_days,missingness_pct,role,usable_test_days,pre_cutoff_valid_days,pre_cutoff_design_rows,exclusion_rule,exclusion_reason
+station_1,Khadeeja School - Abu Dhabi,24.4815,54.36933,2018-08-06,2024-11-07,1844,2286,19.3,source,1822,1410,1354,,
+station_2,Baniyas School - Abu Dhabi,24.32134,54.63593,2017-02-17,2024-11-07,2002,2821,29.0,source,1996,1435,1360,,
+station_3,Khalifah School - Abu Dhabi,24.43009,54.40843,2017-02-17,2024-11-07,1974,2821,30.0,source,1976,1430,1353,,
+station_4,Al Maqtaa - Abu Dhabi,24.40352,54.51609,2017-02-17,2024-11-07,2001,2821,29.1,source,1996,1435,1360,,
+station_5,Hamdan Street - Abu Dhabi,24.48892,54.36371,2018-08-06,2024-11-07,1846,2286,19.2,source,1822,1410,1354,,
+station_6,Mussafah - Abu Dhabi,24.34719,54.50288,2017-02-17,2024-11-07,2006,2821,28.9,source,1996,1435,1360,,
+station_7,Al Mafraq - Abu Dhabi,24.28628,54.58888,2017-02-17,2024-11-07,1872,2821,33.6,source,1874,1435,1360,,
+station_8,US Embassy in Abu Dhabi,24.42431,54.43387,2017-11-09,2024-11-07,2374,2556,7.1,source,2360,1781,1646,,
+station_9,Mushrif Gardens,24.4451,54.3711,2021-07-01,2024-11-07,884,1226,27.9,excluded,858,460,418,not_curated_rich_source,pre-2023 but not in RICH_SOURCES; record begins 2021-07-01 (short baseline); 460 valid days before cutoff (>> 100) yet far below the source floor of 1410 -- does NOT fail the <100 rule
+station_10,CITIES@Cranleigh School Abu Dhabi,24.5321,54.4203,2022-03-04,2024-11-07,819,980,16.4,excluded,778,207,171,not_curated_rich_source,pre-2023 but not in RICH_SOURCES; record begins 2022-03-04 (short baseline); 207 valid days before cutoff (>> 100) yet far below the source floor of 1410 -- does NOT fail the <100 rule
+station_11,CITIES@NYUAD,24.5246,54.43296,2022-10-09,2024-11-07,758,761,0.4,excluded,716,99,85,too_sparse_source,pre-2023 (first 2022-10-09): 85 design rows / 99 valid days before the 2023-01-15 cutoff <= MIN_SOURCE_ROWS=100
+station_12,CITIES@Saadiyat,24.5172,54.4406,2023-01-16,2024-11-07,609,662,8.0,target,564,0,0,,
+station_13,CITIES@Lycee Francais Theodore Monod International School,24.5552,54.4523,2023-02-23,2024-11-07,624,624,0.0,target,579,0,0,,
+station_14,CITIES@West Yas Island,24.4955,54.5904,2023-09-18,2024-11-07,417,417,0.0,target,372,0,0,,
+station_15,CITIES@Khalifa City 1,24.4297,54.5482,2023-09-18,2024-11-07,411,417,1.4,target,366,0,0,,
+station_16,CITIES@Khalifa City 2,24.417,54.5472,2023-09-18,2024-11-07,387,417,7.2,target,342,0,0,,
+station_17,CITIES@Sas Al Nakhl,24.4159,54.5137,2023-10-25,2024-11-07,380,380,0.0,target,335,0,0,,
+station_18,CITIES@Al Danah,24.48693,54.36319,2023-11-13,2024-11-07,354,361,1.9,target,309,0,0,,
+station_19,CITIES@Shakhbout[31],24.3901,54.6547,2023-11-17,2024-11-07,357,357,0.0,target,312,0,0,,
+station_20,Abu dhabi al muzoon,24.4118,54.4264,2024-01-02,2024-11-07,282,311,9.3,target,242,0,0,,
+station_21,CITIES@Bateen-BWA,24.4586,54.3616,2024-03-08,2024-11-07,245,245,0.0,target,200,0,0,,
+station_22,Mamsha Azure 3,24.5388,54.4119,2024-05-21,2024-11-07,171,171,0.0,target,126,0,0,,
+station_23,Al Raha Gardens,24.4315,54.5652,2024-08-26,2024-11-07,74,74,0.0,excluded,29,0,0,too_short_target,post-2023 (first 2024-08-26): 29 usable test days after K=30+14-day lag < MIN_TEST=60
+station_24,Saadiyat Island Residence,24.5369,54.4249,2024-11-01,2024-11-07,7,7,0.0,excluded,-14,0,0,too_short_target,post-2023 (first 2024-11-01): -14 usable test days after K=30+14-day lag < MIN_TEST=60
+station_25,Khalifa City A,24.41998,54.57852,2017-02-17,2024-05-22,1842,2652,30.5,source,1833,1428,1339,,
+station_26,Al Khaleej Al Arabi,24.40767,54.46294,2019-02-14,2022-04-25,704,1167,39.7,excluded,685,730,618,not_curated_rich_source,pre-2023 but not in RICH_SOURCES; record ends 2022-04-25 before any target deployed; 730 valid days before cutoff (>> 100) yet far below the source floor of 1410 -- does NOT fail the <100 rule
+station_27,Sheleila,24.6522,54.6503,2023-09-28,2024-09-30,333,369,9.8,target,290,0,0,,

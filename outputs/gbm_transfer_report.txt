@@ -1,0 +1,24 @@
+====================================================================================
+GBM POOLED TRANSFER vs RIDGE  (HistGBR max_iter=200, lr=0.05, seed=42)
+same pooled source design, same common index; paired per-station
+====================================================================================
+
+--- K=30  (n=12 targets) ---
+  RMSE median : gbm 12.125  ridge 11.685  persistence 12.405
+  MAE  median : gbm 8.981  ridge 8.964  persistence 9.286
+  GBM vs RIDGE (overall RMSE): ridge beats gbm 12/12  (gbm wins 0/12)  gbm gain -3.8%  dPair(ridge-gbm)=+0.416  Wilcoxon p=0.0005
+  GBM vs PERSISTENCE (overall RMSE): gbm wins 11/12  gain +2.3%  p=0.0010
+  tail RMSE: ext gbm 35.69 vs pers 26.85 (gbm wins 0/9); extrel gbm wins 0/12
+
+--- K=90  (n=12 targets) ---
+  RMSE median : gbm 12.060  ridge 11.587  persistence 12.330
+  MAE  median : gbm 9.081  ridge 9.004  persistence 9.161
+  GBM vs RIDGE (overall RMSE): ridge beats gbm 12/12  (gbm wins 0/12)  gbm gain -4.1%  dPair(ridge-gbm)=+0.469  Wilcoxon p=0.0005
+  GBM vs PERSISTENCE (overall RMSE): gbm wins 11/12  gain +2.2%  p=0.0015
+  tail RMSE: ext gbm 37.29 vs pers 28.92 (gbm wins 1/8); extrel gbm wins 1/11
+
+====================================================================================
+EXPECTATION CHECK: GBM loses to ridge at ~11/12 targets
+====================================================================================
+  K=30: ridge beats gbm 12/12  (p=0.0005)  -> MATCHES prior (~11/12)
+  K=90: ridge beats gbm 12/12  (p=0.0005)  -> MATCHES prior (~11/12)
