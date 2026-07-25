@@ -140,9 +140,8 @@ bitwise equality isn't a fair cross-platform bar for a torch model. See
 ## Data
 
 `data/Abu_Dhabi_stations.xlsx` — 27 station sheets, daily PM2.5,
-2017-02-17 → 2024-11-07, 25,577 non-null observations — is **not redistributed
-here**: it's government monitoring data and clearance to share it is a separate
-matter, so we don't assume it. The committed tables in `outputs/` let you follow
+2017-02-17 → 2024-11-07, 25,577 non-null observations will be released once the paper is accepted for publication.
+The committed tables in `outputs/` let you follow
 and check every result without it. If you do have the workbook, drop it in `data/`
 (or set `$AQ_DATA_FILE`); [`data/README.md`](data/README.md) has the expected
 format. Tests and scripts that need it skip themselves cleanly when it's absent.
